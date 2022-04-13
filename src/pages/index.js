@@ -15,7 +15,9 @@ import {
   gql
 } from "@apollo/client";
 
-export default function Home() {
+export default function Home({ home }) {
+  const {heroTitle, heroLink, heroDescrip, heroBackground} = home;
+  
   return (
     <Layout>
       <Head>
