@@ -98,10 +98,11 @@ export async function getStaticProps() {
   })
 
   console.log('data:', data)
+  const home = data.data.page
 
   return {
     props: {
-
+      home
     }
   }
 }
