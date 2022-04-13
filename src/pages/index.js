@@ -9,6 +9,12 @@ import products from '@data/products';
 
 import styles from '@styles/Page.module.scss'
 
+import {
+  ApolloClient,
+  InMemoryCache,
+  gql
+} from "@apollo/client";
+
 export default function Home() {
   return (
     <Layout>
@@ -63,4 +69,15 @@ export default function Home() {
       </Container>
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const client = new ApolloClient({
+    uri: 'https://api-us-east-1.graphcms.com/v2/cl1xxkwh70pg701xtevc6grft/master',
+    cache: new InMemoryCache()
+  });
+  return {
+    props:
+      
+  }
 }
