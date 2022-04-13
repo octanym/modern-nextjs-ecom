@@ -76,6 +76,12 @@ export async function getStaticProps() {
     uri: 'https://api-us-east-1.graphcms.com/v2/cl1xxkwh70pg701xtevc6grft/master',
     cache: new InMemoryCache()
   });
+
+  const data = await client.query({
+    query: gql`
+    `
+  })
+
   return {
     props:
       
