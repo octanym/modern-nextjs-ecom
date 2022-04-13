@@ -79,11 +79,29 @@ export async function getStaticProps() {
 
   const data = await client.query({
     query: gql`
+      query PageHome {
+        page(where: {slug: "home"}) {
+          heroDescrip
+          heroLink
+          heroTitle
+          id
+          name
+          slug
+          heroBackground {
+            height
+            url
+            width
+          }
+        }
+      }
     `
   })
 
+  console.log('data:', data)
+
   return {
-    props:
-      
+    props: {
+
+    }
   }
 }
