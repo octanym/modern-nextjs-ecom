@@ -15,9 +15,9 @@ import {
   gql
 } from "@apollo/client";
 
-export default function Home({ home }) {
+export default function Home({ home, products }) {
   const { heroTitle, heroLink, heroDescrip, heroBackground } = home;
-
+  console.log('products:', products)
   return (
     <Layout>
       <Head>
@@ -43,13 +43,13 @@ export default function Home({ home }) {
         <h2 className={styles.heading}>Featured Gear</h2>
 
         <ul className={styles.products}>
-          {products.slice(0, 4).map(product => {
+          {products.map(product => {
             return (
-              <li key={product.id}>
+              <li key={product.slug}>
                 <Link href="#">
                   <a>
                     <div className={styles.productImage}>
-                      <img width="500" height="500" src={product.image} alt="" />
+                      <img width={product.image.width} height={product.image.height} src={product.image.url} alt="" />
                     </div>
                     <h3 className={styles.productTitle}>
                       { product.name }
@@ -110,7 +110,6 @@ export async function getStaticProps() {
     `
   })
 
-  console.log('data:', data)
   const home = data.data.page;
   const products = data.data.products;
 
