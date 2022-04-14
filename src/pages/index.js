@@ -16,8 +16,8 @@ import {
 } from "@apollo/client";
 
 export default function Home({ home }) {
-  const {heroTitle, heroLink, heroDescrip, heroBackground} = home;
-  
+  const { heroTitle, heroLink, heroDescrip, heroBackground } = home;
+
   return (
     <Layout>
       <Head>
@@ -29,13 +29,13 @@ export default function Home({ home }) {
         <h1 className="sr-only">Space Jelly Gear</h1>
 
         <div className={styles.hero}>
-          <Link href="#">
+          <Link href={heroLink} >
             <a>
               <div className={styles.heroContent}>
-                <h2>Prepare for liftoff.</h2>
-                <p>Apparel that&apos;s out of this world!</p>
+                <h2>{heroTitle}</h2>
+                <p>{heroDescrip}</p>
               </div>
-              <img className={styles.heroImage} src="/images/space-jelly-gear-banner.jpg" alt="" />
+              <img className={styles.heroImage} width={heroBackground.width} height={heroBackground.height} src={heroBackground.url} alt="" />
             </a>
           </Link>
         </div>
