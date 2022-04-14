@@ -95,16 +95,29 @@ export async function getStaticProps() {
             width
           }
         }
+
+        products(first: 4) {
+          name
+          price
+          slug
+          image {
+            height
+            url
+            width
+          }
+        }
       }
     `
   })
 
   console.log('data:', data)
-  const home = data.data.page
+  const home = data.data.page;
+  const products = data.data.products;
 
   return {
     props: {
-      home
+      home,
+      products
     }
   }
 }
