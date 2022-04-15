@@ -9,7 +9,6 @@ import products from '@data/products';
 
 import styles from '@styles/Page.module.scss'
 
-<<<<<<< HEAD
 import {
   ApolloClient,
   InMemoryCache,
@@ -19,9 +18,6 @@ import {
 export default function Home({ home, products }) {
   const { heroTitle, heroLink, heroDescrip, heroBackground } = home;
   console.log('products:', products)
-=======
-export default function Home() {
->>>>>>> a42cc683352612fb19887dba36520290ad093de7
   return (
     <Layout>
       <Head>
@@ -33,7 +29,6 @@ export default function Home() {
         <h1 className="sr-only">Space Jelly Gear</h1>
 
         <div className={styles.hero}>
-<<<<<<< HEAD
           <Link href={heroLink} >
             <a>
               <div className={styles.heroContent}>
@@ -41,15 +36,6 @@ export default function Home() {
                 <p>{heroDescrip}</p>
               </div>
               <img className={styles.heroImage} width={heroBackground.width} height={heroBackground.height} src={heroBackground.url} alt="" />
-=======
-          <Link href="#">
-            <a>
-              <div className={styles.heroContent}>
-                <h2>Prepare for liftoff.</h2>
-                <p>Apparel that&apos;s out of this world!</p>
-              </div>
-              <img className={styles.heroImage} src="/images/space-jelly-gear-banner.jpg" alt="" />
->>>>>>> a42cc683352612fb19887dba36520290ad093de7
             </a>
           </Link>
         </div>
@@ -57,7 +43,6 @@ export default function Home() {
         <h2 className={styles.heading}>Featured Gear</h2>
 
         <ul className={styles.products}>
-<<<<<<< HEAD
           {products.map(product => {
             return (
               <li key={product.slug}>
@@ -65,15 +50,6 @@ export default function Home() {
                   <a>
                     <div className={styles.productImage}>
                       <img width={product.image.width} height={product.image.height} src={product.image.url} alt="" />
-=======
-          {products.slice(0, 4).map(product => {
-            return (
-              <li key={product.id}>
-                <Link href="#">
-                  <a>
-                    <div className={styles.productImage}>
-                      <img width="500" height="500" src={product.image} alt="" />
->>>>>>> a42cc683352612fb19887dba36520290ad093de7
                     </div>
                     <h3 className={styles.productTitle}>
                       { product.name }
@@ -95,7 +71,6 @@ export default function Home() {
       </Container>
     </Layout>
   )
-<<<<<<< HEAD
 }
 
 export async function getStaticProps() {
@@ -144,6 +119,4 @@ export async function getStaticProps() {
       products
     }
   }
-=======
->>>>>>> a42cc683352612fb19887dba36520290ad093de7
 }
